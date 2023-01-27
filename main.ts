@@ -30,7 +30,7 @@ serve((req: Request) => {
   const url = new URL(req.url);
   if (url.pathname == "/") {
     main();
-    return new Response("Hello world\n");
+    return new Response("Function executed\n");
   }
 
   return new Response("404 Not Found\n", {
