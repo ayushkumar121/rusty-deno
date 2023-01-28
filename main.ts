@@ -8,9 +8,7 @@ const getMemory = (ptr: number, len: number) => {
   return memory.subarray(ptr, ptr + len);
 };
 
-const wasmCode = await Deno.readFile(
-  "rusty_deno.wasm",
-);
+const wasmCode = await Deno.readFile("app.wasm");
 const wasmModule = new WebAssembly.Module(wasmCode);
 const wasmInstance = new WebAssembly.Instance(wasmModule, {
   env: {
